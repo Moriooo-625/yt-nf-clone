@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useRef } from 'react'
 import { Button } from './ui/button'
 import VideoCard from './VideoCard'
-import type { YouTubeVideo } from '@/app/lib/youtube'
+import { YouTubeVideo } from '@/app/shared/lib/youtube'
 
 interface CategorySectionProps {
   title: string

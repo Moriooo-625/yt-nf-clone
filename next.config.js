@@ -5,6 +5,7 @@ const nextConfig = {
     YOUTUBE_CHANNEL_ID: process.env.YOUTUBE_CHANNEL_ID,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

@@ -6,7 +6,7 @@ import CategorySection from './CategorySection'
 import ClientWrapper from './ClientWrapper'
 import ErrorBoundary from './ErrorBoundary'
 import Loading from './Loading'
-import type { YouTubeVideo } from '@/app/lib/youtube'
+import { YouTubeVideo } from '@/app/shared/lib/youtube'
 
 interface HomePageProps {
   recentVideos: YouTubeVideo[]
