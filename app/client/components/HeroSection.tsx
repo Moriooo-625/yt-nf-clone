@@ -2,7 +2,8 @@
 
 import { Play, Info } from 'lucide-react'
 import { Button } from './ui/button'
-import type { YouTubeVideo } from '@/app/lib/youtube'
+import type { YouTubeVideo } from '@/app/shared/lib/youtube'
+import Image from 'next/image'
 
 interface HeroSectionProps {
   video: YouTubeVideo
@@ -12,10 +13,12 @@ export default function HeroSection({ video }: HeroSectionProps) {
   return (
     <section className="relative h-[80vh] bg-black">
       <div className="absolute inset-0">
-        <img
+        <Image
           src={video.thumbnail}
           alt={video.title}
-          className="w-full h-full object-cover opacity-50"
+          fill
+          className="object-cover opacity-50"
+          unoptimized
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>

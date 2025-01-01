@@ -13,6 +13,7 @@ export default async function VideoPage({ params }: VideoPageProps) {
     const video = await getVideoDetails(params.id)
     return <VideoDetailPage video={video} />
   } catch (error) {
+    console.error('Error fetching video details:', error)
     notFound()
   }
 } 

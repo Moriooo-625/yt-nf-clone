@@ -5,6 +5,7 @@ import { Play, Plus, ThumbsUp } from 'lucide-react'
 import { Button } from './ui/button'
 import type { YouTubeVideo } from '@/app/shared/lib/youtube'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 interface VideoCardProps {
   video: YouTubeVideo
@@ -30,7 +31,15 @@ export default function VideoCard({ video }: VideoCardProps) {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover" />
+      <div className="relative w-full h-full">
+        <Image
+          src={video.thumbnail}
+          alt={video.title}
+          fill
+          className="object-cover"
+          unoptimized
+        />
+      </div>
       <div className="absolute bottom-2 right-2 px-1 py-0.5 bg-black bg-opacity-70 text-white text-xs rounded">
         {video.duration}
       </div>
