@@ -18,10 +18,14 @@ interface HomePageProps {
 
 export default function HomePage({ recentVideos, trendingVideos, popularVideos, error }: HomePageProps) {
   if (error) {
+    const isQuotaMessage = error.includes('デモ用のダミーデータ')
     return (
       <ClientWrapper>
         <main className="pt-24 px-4">
-          <ErrorMessage message={error} />
+          <ErrorMessage
+            message={error}
+            type={isQuotaMessage ? 'warning' : 'error'}
+          />
         </main>
       </ClientWrapper>
     )
@@ -33,7 +37,10 @@ export default function HomePage({ recentVideos, trendingVideos, popularVideos, 
     return (
       <ClientWrapper>
         <main className="pt-24 px-4">
-          <ErrorMessage message="動画を読み込めませんでした。しばらく時間をおいて再度お試しください。" />
+          <ErrorMessage
+            message="動画を読み込めませんでした。しばらく時間をおいて再度お試しください。"
+            type="error"
+          />
         </main>
       </ClientWrapper>
     )
